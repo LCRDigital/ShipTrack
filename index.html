@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ship Tracking</title>
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; width: 100%; }
+    #map-container { width: 100%; height: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map-container"></div>
+  
+  <script>
+    // Get MMSI from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const mmsi = urlParams.get('mmsi');
+    
+    // Set widget variables
+    var mst_width = "100%";
+    var mst_height = "100%";
+    var mst_border = "0";
+    var mst_map_style = "simple";
+    var mst_mmsi = mmsi || ""; // Use the MMSI from URL or empty string
+    var mst_show_track = "true";
+    var mst_show_info = "true";
+    var mst_fleet = "";
+    var mst_lat = "";
+    var mst_lng = "";
+    var mst_zoom = "";
+    var mst_show_names = "0";
+    var mst_scroll_wheel = "0";
+    var mst_show_menu = "0";
+  </script>
+  <script id="myshiptrackingscript" src="//www.myshiptracking.com/js/widgetApi.js" async defer></script>
+</body>
+</html>
